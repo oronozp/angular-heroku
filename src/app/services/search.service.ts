@@ -17,7 +17,7 @@ export class SearchService {
     const body = new HttpParams()
     .set('user', 'admin')
     .set('password', '123123')
-      return this.http.post<Auth>("https://app-soccer-team.herokuapp.com/api/user", body,{headers:headers});
+      return this.http.post<Auth>("https://app-soccer-team.herokuapp.com/user", body,{headers:headers});
 
   }
   public getInfoTeam(team:string,token:string){
