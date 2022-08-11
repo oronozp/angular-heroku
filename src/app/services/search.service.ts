@@ -17,7 +17,7 @@ export class SearchService {
     const body = new HttpParams()
     .set('user', 'admin')
     .set('password', '123123')
-      return this.http.post<Auth>("http://app-soccer-team.herokuapp.com/api/user", body,{headers:headers});
+      return this.http.post<Auth>("https://app-soccer-team.herokuapp.com/api/user", body,{headers:headers});
 
   }
   public getInfoTeam(team:string,token:string){
@@ -25,7 +25,7 @@ export class SearchService {
     .set( 'Authorization', `Bearer ${token}`);
     const params = new HttpParams()
     .set('nombre', team)
-    const req = this.http.get<Match[]>('http://app-soccer-team.herokuapp.com/equipo',{ headers: headers,params:params });
+    const req = this.http.get<Match[]>('https://app-soccer-team.herokuapp.com/equipo',{ headers: headers,params:params });
     return req;
   }
 }
